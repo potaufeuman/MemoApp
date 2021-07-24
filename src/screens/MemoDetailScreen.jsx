@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, ScrollView, Text, StyleSheet } from 'react-native';
+import {
+  View, ScrollView, Text, StyleSheet,
+} from 'react-native';
 import AppBar from '../components/AppBar';
 import CircleButton from '../components/CircleButton';
 
@@ -19,7 +21,7 @@ const MemoDetailScreen = ()=> {
           書体やレイアウトなどを確認するために用います。
         </Text>
       </ScrollView>
-      <CircleButton style={{top: 160, bottom: 'auto'}}>+</CircleButton>
+      <CircleButton style={{top: 160, bottom: 'auto'}} name="edit-2" />
     </View>
   );
 }
@@ -29,7 +31,7 @@ export default MemoDetailScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#E5E5E5'
+    backgroundColor: '#E5E5E5',
   },
   memoheader: {
     backgroundColor: '#467FD3',
