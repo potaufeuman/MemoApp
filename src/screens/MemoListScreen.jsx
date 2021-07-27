@@ -4,12 +4,14 @@ import AppBar from '../components/AppBar';
 import MemoList from '../components/MemoList';
 import CircleButton from '../components/CircleButton';
 
-const MemoListScreen = ()=> {
+const MemoListScreen = (props)=> {
+  const { navigation } = props;
   return(
     <View style={styles.container}>
-      <AppBar />
+      {/* AppBar /> */}
       <MemoList />
-      <CircleButton name="plus" />
+      <CircleButton name="plus"
+       onPress={() => { navigation.navigate('MemoCreate'); }}/>
     </View>
   );
 }

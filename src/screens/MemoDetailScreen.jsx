@@ -5,10 +5,11 @@ import {
 import AppBar from '../components/AppBar';
 import CircleButton from '../components/CircleButton';
 
-const MemoDetailScreen = ()=> {
+const MemoDetailScreen = (props)=> {
+  const { navigation } = props;
   return(
     <View style={styles.container}>
-      <AppBar />
+      {/* AppBar /> */}
       <View style={styles.memoheader}>
         <Text style={styles.memoTitle}>買い物リスト</Text>
         <Text style={styles.memoDate}>2020年12月24日</Text>
@@ -21,7 +22,8 @@ const MemoDetailScreen = ()=> {
           書体やレイアウトなどを確認するために用います。
         </Text>
       </ScrollView>
-      <CircleButton style={{top: 160, bottom: 'auto'}} name="edit-2" />
+      <CircleButton style={{top: 60, bottom: 'auto'}} name="edit-2"
+       onPress={() => { navigation.navigate('MemoEdit'); }} />
     </View>
   );
 }

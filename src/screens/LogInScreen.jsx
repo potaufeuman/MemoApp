@@ -5,18 +5,33 @@ import {
 import AppBar from '../components/AppBar';
 import Button from '../components/Button';
 
-const LogInScreen = ()=> {
+const LogInScreen = (props)=> {
+  const { navigation } = props;
   return(
     <View style={styles.container}>
-      <AppBar />
+      {/* AppBar /> */}
       <View style={styles.inner}>
         <Text style={styles.title}>Log In</Text>
         <TextInput style={styles.input} value="Email Address" />
         <TextInput style={styles.input} value="password" />
-        <Button label='Submit' />
+        <Button label='Submit'
+          onPress={() => {
+            navigation.reset({
+              index: 0,
+              routes: [{ name: 'MemoList' }],
+            });
+          }}
+        />
         <View style={styles.footer}>
           <Text style={styles.footerText}>Not registered?</Text>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.reset({
+                index: 0,
+                routes: [{ name: 'SignUp' }],
+              });
+            }}
+          >
             <Text style={styles.footerLink}>Sign up here!</Text>
           </TouchableOpacity>
         </View>
